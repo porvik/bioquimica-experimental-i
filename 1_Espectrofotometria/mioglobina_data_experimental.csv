@@ -1,0 +1,11 @@
+Tubo;Tampon volumen - Tris-HCl 0,02 M (ml);Muestra tipo;Muestra volumen (ml);Muestra concentracion (mg/ml);Absorbancia medida
+1;1;1x;0;0;0
+2;0,9;1x;0,1;0,02;0,209
+3;0,85;1x;0,15;0,03;0,287
+4;0,7;1x;0,3;0,06;0,558
+5;0,6;1x;0,4;0,08;0,726
+6;0,5;1x;0,5;0,1;0,866
+7;0,4;1x;0,6;0,12;1,039
+8;0;5x;1;1;NA
+9;0,5;5x;0,5;0,5;NA
+10;0,9;5x;0,1;0,1;0,765

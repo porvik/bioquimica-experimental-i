@@ -13,7 +13,6 @@ language:
     tab: "Tabla "
 ---
 ```{r include=FALSE}
-# setwd("./1_Espectrofotometria/")
 fig_id <- 0
 tbl_id <- 0
 ```
@@ -27,7 +26,7 @@ library(dplyr)
 
 # Load experimental data
 df <- read_csv2(
-  file.path("mioglobina.csv"),
+  file.path("1_Espectrofotometria/mioglobina.csv"),
   show_col_types = FALSE
 )
 
@@ -208,7 +207,7 @@ p_mio_espectro <- ggplot(df, aes(x = wavelength, y = absorbance)) +
 print(p_mio_espectro)
 
 ggsave(
-  "mioglobina_espectro.png",
+  "1_Espectrofotometria/mioglobina_espectro.png",
   plot = p_mio_espectro,
   width = 10,
   height = 6,
@@ -222,7 +221,7 @@ fig_id <- fig_id + 1
 ```
 
 ```{r mioglobina-espectro, echo=FALSE, fig.align='center', fig.cap=paste0('Figura ', fig_id, ': Espectro de absorción UV-visible de mioglobina equina a 0,1 mg/mL.')}
-knitr::include_graphics("mioglobina_espectro.png")
+knitr::include_graphics("1_Espectrofotometria/mioglobina_espectro.png")
 ```
 
 ```{r include=FALSE}
@@ -235,7 +234,7 @@ library(dplyr)
 # 6 = Absorbancia medida
 
 df <- read_csv2(
-  file.path("mioglobina_data_experimental.csv"),
+  file.path("1_Espectrofotometria/mioglobina_data_experimental.csv"),
   show_col_types = FALSE
 )
 
@@ -403,7 +402,7 @@ p_mio <- ggplot(
 p_mio
 
 ggsave(
-  "recta_patron_mioglobina.png",
+  "1_Espectrofotometria/recta_patron_mioglobina.png",
   plot = p_mio,
   width = 10,
   height = 6,
@@ -428,7 +427,7 @@ fig_id <- fig_id + 1
 ```
 
 ```{r fig-adn-recta-mioglobina, echo=FALSE, fig.align='center', fig.cap=paste0('Figura ', fig_id, ': Recta patrón de mioglobina obtenida a partir de los tubos 1–7.')}
-knitr::include_graphics("recta_patron_mioglobina.png")
+knitr::include_graphics("1_Espectrofotometria/recta_patron_mioglobina.png")
 ```
 
 Para determinar experimentalmente el coeficiente de extinción molar de la mioglobina equina, se utilizaron los siete primeros tubos patrón, con concentraciones entre 0 y 0,12 mg/mL, suponiendo un paso óptico de 1 cm y una masa molecular aproximada de 17.000 g/mol. Mediante regresión lineal se obtuvo la ecuación A = 8,53985.c + 0,02624, con un coeficiente de determinación R² = 0,99783, y un coeficiente de extinción molar de 145.178 L.mol⁻¹.cm⁻¹. Al realizar una regresión forzada al origen 0 se obtuvo un coeficiente de 150.300 L.mol⁻¹.cm⁻¹. Finalmente, aplicando directamente la ley de Lambert-Beer al tubo 6 (A = 0,866; c = 0,1 mg/mL), se obtuvo un valor de 147.220 L.mol⁻¹.cm⁻¹. Los tres resultados fueron próximos entre sí y se compararon con el valor bibliográfico de 157.000 L.mol⁻¹.cm⁻¹ para mioglobina equina férrica a 409 nm y pH 7,0 [@desanctis2007], obteniéndose diferencias relativas del −7,53 %, −4,27 % y −6,23 %, respectivamente. Estas diferencias pueden estar relacionadas con la incertidumbre experimental, el procedimiento de ajuste y las condiciones de medida. En conjunto, los resultados presentan una buena concordancia con la referencia seleccionada y son compatibles con la ley de Lambert-Beer en el intervalo estudiado.
@@ -495,7 +494,7 @@ library(readr)
 library(dplyr)
 
 adn <- read_csv2(
-  file.path("adn.csv"),
+  file.path("1_Espectrofotometria/adn.csv"),
   show_col_types = FALSE
 )
 
@@ -630,7 +629,7 @@ p_adn <- ggplot(
   )
 
 ggsave(
- file.path("adn_espectro.png"),
+ file.path("1_Espectrofotometria/adn_espectro.png"),
  plot = p_adn,
  width = 8,
  height = 4,
@@ -643,7 +642,7 @@ fig_id <- fig_id + 1
 ```
 
 ```{r adn-espectro, echo=FALSE, fig.align='center', fig.cap=paste0('Figura ', fig_id, ': Espectro de absorción UV-visible de ADN a 0,025 mg/mL.')}
-knitr::include_graphics("adn_espectro.png")
+knitr::include_graphics("1_Espectrofotometria/adn_espectro.png")
 ```
 
 ```{r include=FALSE}
@@ -656,7 +655,7 @@ library(dplyr)
 # 6 = Absorbancia medida
 
 df <- read_csv2(
-  file.path("adn_data_experimental.csv"),
+  file.path("1_Espectrofotometria/adn_data_experimental.csv"),
   show_col_types = FALSE
 )
 
@@ -825,7 +824,7 @@ p_mio <- ggplot(
 p_mio
 
 ggsave(
-  "recta_patron_adn.png",
+  "1_Espectrofotometria/recta_patron_adn.png",
   plot = p_mio,
   width = 10,
   height = 6,
@@ -850,7 +849,7 @@ fig_id <- fig_id + 1
 ```
 
 ```{r fig-adn-recta-patron, echo=FALSE, fig.align='center', fig.cap=paste0('Figura ', fig_id, ': Recta patrón de ADN obtenida a partir de los tubos 1–7.')}
-knitr::include_graphics("recta_patron_adn.png")
+knitr::include_graphics("1_Espectrofotometria/recta_patron_adn.png")
 ```
 
 Para determinar experimentalmente el coeficiente de extinción molar del ADN, se utilizó como unidad de referencia un par de bases, con una masa molar promedio de 660 g/mol, debido a que la masa molar total de la molécula depende de su longitud. A partir de la pendiente de la recta patrón (19,509 L.g⁻¹.cm⁻¹), se obtuvo un coeficiente de extinción molar aproximado de 12.876 L.mol⁻¹.cm⁻¹ por par de bases. Este resultado se comparó con el valor bibliográfico de 13.200 L.mol⁻¹.cm⁻¹ por par de bases a 260 nm [@serucnik2018], obteniéndose una desviación relativa del −2,46 %. Los resultados muestran una buena concordancia con la referencia y son compatibles con la ley de Lambert-Beer en el intervalo estudiado.
